@@ -13,7 +13,7 @@ test("sends kind server with the key header and no credentials", async () => {
   const e = new Error("db down at https://x.example.org/p?token=abc");
   await reportServerError(e, { app: "website", key: "k", release: "9", route: "/api/users/123?y=1" });
   expect(calls).toHaveLength(1);
-  expect(calls[0].url).toBe("https://api.educationxr.com/api/ddd/errors/client");
+  expect(calls[0].url).toBe("https://api.educationxr.com/v1/errors/reports");
   expect(calls[0].init.headers["Edxr-Report-Key"]).toBe("k");
   expect(calls[0].init.credentials).toBe("omit");
   expect(calls[0].body).toMatchObject({ kind: "server", app: "website", release: "9", route: "/api/users/:n", path: "/api/users/:n", name: "Error" });

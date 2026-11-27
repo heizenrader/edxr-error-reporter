@@ -2,7 +2,7 @@ import { LIMITS, cap, errorLike, firstFrame, isNoise, pagePath, scrubURLs, type 
 
 export { scrubURLs, pagePath, isNoise } from "./scrub";
 
-export const DEFAULT_ENDPOINT = "https://api.educationxr.com/api/ddd/errors/client";
+export const DEFAULT_ENDPOINT = "https://api.educationxr.com/v1/errors/reports";
 export const DEFAULT_SAMPLE_LIMIT = 10;
 /** A send that has not answered by then counts as failed. */
 export const FETCH_TIMEOUT_MS = 10_000;

@@ -58,7 +58,7 @@ A server report is sent with `kind: "server"` (a browser one with `kind: "client
 
 ## What it does
 
-- Sends to `https://api.educationxr.com/api/ddd/errors/client` (override with `endpoint`).
+- Sends to `https://api.educationxr.com/v1/errors/reports` (override with `endpoint`).
 - The key travels in the `Edxr-Report-Key` header; a beacon fallback carries `key` and `app` in its body as `text/plain`.
 - No cookies on fetch (`credentials: "omit"`). The beacon fallback cannot omit credentials (browsers always include them on `sendBeacon`); it is used only when fetch itself fails. A token is sent as `Authorization` only when `getToken` returns one.
 - Sends go one at a time. After the first refused or failed send of any kind, nothing more is sent for that page load.
